@@ -1,0 +1,17 @@
+---
+- name: ProRail PipeLine
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+
+    - name: Merge Pull Request in Bitbucket
+      debug:
+
+
+    - name: Deploy Instances with Tower
+      debug:
+      register: deploy
+
+    - debug: msg="{{ deploy  | to_json }}"
+

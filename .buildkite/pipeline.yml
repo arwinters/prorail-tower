@@ -1,0 +1,13 @@
+---
+steps:
+  - label: Test Playbook on valid syntax.
+    command: ansible-playbook --syntax-check write_file.yml
+
+  - wait: ~
+    continue_on_failure: false
+
+  - label: Run Pipeline test
+    command: ansible-playbook write_file.yml
+
+  - label: End of test pipeline
+    command: echo "Hiep Hoi"

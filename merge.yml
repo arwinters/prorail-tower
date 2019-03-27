@@ -1,0 +1,21 @@
+---
+- name: ProRail - Playbook Bitbucket Merge Pull Request
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+
+
+    - name: Wait for reviewer to approve merge request.
+      debug:
+      register: approval_request
+
+    - name: Fetch Pull Request
+      debug:
+      register: fetch_request
+#      when:
+
+    - name: Merge the Pull Request
+      debug:
+      register: api_request
+#      when:
